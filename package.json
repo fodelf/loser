@@ -1,0 +1,52 @@
+{
+  "name": "loser",
+  "version": "1.0.0",
+  "description": "work For iE8",
+  "main": "dist/loser.runtime.common.js",
+  "module": "dist/loser.runtime.esm.js",
+  "unpkg": "dist/loser.js",
+  "jsdelivr": "dist/loser.js",
+  "typings": "types/loser.d.ts",
+  "files": [
+    "src",
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "dev": "rollup -w -c scripts/config.js --environment TARGET:web-full-dev"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node scripts/verify-commit-msg.js"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fodelf/loser.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Evan You",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fodelf/loser/issues"
+  },
+  "homepage": "https://github.com/fodelf/loser/loser#readme",
+  "devDependencies": {
+    "lodash": "^3.10.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
