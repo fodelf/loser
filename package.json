@@ -2,8 +2,8 @@
   "name": "loser",
   "version": "1.0.0",
   "description": "work For iE8",
-  "main": "dist/loser.runtime.common.js",
-  "module": "dist/loser.runtime.esm.js",
+  "main": "dist/loser.js",
+  "module": "dist/loser.js",
   "unpkg": "dist/loser.js",
   "jsdelivr": "dist/loser.js",
   "typings": "types/loser.d.ts",
@@ -14,7 +14,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "dev": "rollup -w -c scripts/config.js --environment TARGET:web-full-dev"
+    "build": "webpack --config ./build/webpack.base.conf.js"
   },
   "gitHooks": {
     "pre-commit": "lint-staged",
@@ -31,15 +31,22 @@
     "url": "git+https://github.com/fodelf/loser.git"
   },
   "keywords": [
-    "vue"
+    "loser"
   ],
-  "author": "Evan You",
+  "author": "Wu wenzhou",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fodelf/loser/issues"
   },
   "homepage": "https://github.com/fodelf/loser/loser#readme",
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/runtime": "^7.3.4",
+    "babel-loader": "^8.0.4",
+    "core-js": "^3.0.1",
+    "uglifyjs-webpack-plugin": "^2.0.1",
     "lodash": "^3.10.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
